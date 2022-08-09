@@ -4,9 +4,10 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.bukutabungan.data.model.DataTabungan.Companion.TABLE_TABUNGAN
 import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "data_tabungan")
+@Entity(tableName = TABLE_TABUNGAN)
 @Parcelize
 data class DataTabungan(
 
@@ -28,7 +29,11 @@ data class DataTabungan(
 
     @ColumnInfo(name = "tanda_terima")
     val tandaTerima: String
-) : Parcelable
+) : Parcelable {
+    companion object {
+        const val TABLE_TABUNGAN = "data_tabungan"
+    }
+}
 
 @Entity(tableName = "data_nama")
 @Parcelize

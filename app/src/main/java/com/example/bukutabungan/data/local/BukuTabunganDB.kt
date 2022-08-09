@@ -9,7 +9,9 @@ import com.example.bukutabungan.data.model.DataNama
 import com.example.bukutabungan.data.model.DataTabungan
 import com.example.bukutabungan.data.util.Converters
 
-@Database(entities = [DataTabungan::class, DataNama::class], version = 1)
+@Database(
+    entities = [DataTabungan::class, DataNama::class],
+    version = 1)
 @TypeConverters(Converters::class)
 abstract class BukuTabunganDB : RoomDatabase() {
     abstract fun bukuTabunganDao() : BukuTabunganDao

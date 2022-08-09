@@ -5,13 +5,14 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.bukutabungan.data.model.DataTabungan
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BukuTabunganDao {
 
     @Query("SELECT nama_lengkap from data_nama")
-    suspend fun ambilTabungan(): List<String>
+    fun ambilTabungan(): List<String>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMasuk(dataTabungan: DataTabungan)
+    fun insertMasuk(dataTabungan: DataTabungan)
 }
